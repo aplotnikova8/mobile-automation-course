@@ -11,4 +11,12 @@ public class MainClassTest {
                 expectedValue, actualValue);
     }
 
+    @Test
+    public void testGetClassNumber() {
+        int boundaryValue = 45;
+        int actualValue = MainClass.getClassNumber();
+        Assert.assertTrue(String.format("Значение метода getClassNumber() %s меньше или равно граничной величины %s", actualValue, boundaryValue),
+                actualValue > boundaryValue);
+    }
+
 }
