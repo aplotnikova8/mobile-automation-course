@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="559d8efb-d364-486b-a419-403464232a20" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/src/test/java/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MainClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainClassTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +48,22 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.MainClassTest.testGetClassNumber">
+  <component name="RunManager" selected="JUnit.MainClassTest.testGetClassString">
     <configuration name="MainClassTest.testGetClassNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mobile-automation-course" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MainClassTest" />
       <option name="METHOD_NAME" value="testGetClassNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainClassTest.testGetClassString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mobile-automation-course" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainClassTest" />
+      <option name="METHOD_NAME" value="testGetClassString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -81,6 +92,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MainClassTest.testGetClassString" />
         <item itemvalue="JUnit.MainClassTest.testGetClassNumber" />
         <item itemvalue="JUnit.MainClassTest.testGetLocalNumber" />
       </list>
@@ -107,5 +119,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MainClassTest.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

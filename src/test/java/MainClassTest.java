@@ -19,4 +19,13 @@ public class MainClassTest {
                 actualValue > boundaryValue);
     }
 
+    @Test
+    public void testGetClassString() {
+        String originalValue = MainClass.getClassString();
+        String subString1 = "hello";
+        String subString2 = "Hello";
+        Assert.assertTrue(String.format("Строка %s не содержит подстроку %s или %s", originalValue, subString1, subString2),
+                originalValue.contains(subString1) || originalValue.contains(subString2));
+    }
+
 }
