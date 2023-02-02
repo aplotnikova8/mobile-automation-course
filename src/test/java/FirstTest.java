@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -41,7 +42,7 @@ public class FirstTest {
         capabilities.setCapability("appActivity", ".main.MainActivity");
         //capabilities.setCapability("app", "/Users/anastasiyaplotnikova/IdeaProjects/mobile-automation-course/apks/wikipedia.apk");
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
     @After
@@ -114,6 +115,26 @@ public class FirstTest {
 
         savedArticleList.get(0).click();
         Assert.assertTrue(String.valueOf(waitElementIsVisible(articleTitle).getAttribute("text")).equals(searchRequest));
+    }
+
+    @Test
+    public void checkTitleIsPresent() {
+        By inputOnMainMenu = By.xpath("//*[contains(@resource-id, 'search_container')]/android.widget.TextView");
+        By inputOnSearchPage = By.id("org.wikipedia:id/search_src_text");
+        By searchResults = By.xpath("//*[contains(@resource-id, 'search_results_list')]/android.view.ViewGroup");
+        By articleTitle = By.xpath("//android.view.View[contains(@resource-id, 'section-title')]/preceding-sibling::android.view.View");
+        waitElementAndClick(inputOnMainMenu);
+        driver.findElement(inputOnSearchPage).sendKeys("Java");
+        waitAllElementsIsVisible(searchResults, "Ни одного элемента по заданному локатору не найдено!").get(0).click();
+        assertElementPresent(articleTitle);
+    }
+
+    private void assertElementPresent(By by) {
+        try {
+            driver.findElement(by);
+        } catch (NoSuchElementException e) {
+            throw new AssertionError(String.format("На экране нет элемента по локатору %s", by));
+        }
     }
 
     private void swipeElementToLeft(WebElement element) {
